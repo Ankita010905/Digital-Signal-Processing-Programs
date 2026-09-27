@@ -1,0 +1,14 @@
+clc;
+clear all;
+close all;
+nx=-2:1;
+x=[1 2 3 4];
+nh=-1:1;
+h=[1 2 1];
+[y,n]=conv(x,nx,h,nh);
+stem(n,y);
+disp(y);
+grid on;
+xlabel('Number of Samples----->');
+ylabel('Amplitude----->');
+title('Convolution');

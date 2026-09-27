@@ -1,0 +1,31 @@
+clc;
+clear all;
+close all;
+T=1;
+Ap=2.5;
+As=30;
+wp=20;
+ws=50;
+[N,wc]=cheb1ord(wp,ws,Ap,As,'s');
+[b,a]=cheby1(N,Ap,wp,'s');
+Hs=tf(b,a);
+[numd,dend]=bilinear(b,a,1/T);
+Hz=tf(numd,dend,T);
+wp=2*atan(wp*T/2);
+%edge freq
+ws=2*atan(ws*T/2);
+%edge freq
+w=0:0.01:pi;
+Hw=freqz(numd,dend,w);
+subplot(1,2,1);
+plot(w,abs(Hw),'linewidth',2);
+title('Maximum Passband');
+xlabel('Frequency in pi units---->');
+ylabel('Magnitude---->');
+grid on;
+subplot(1,2,2);
+plot(w,20*log10(abs(Hw)),'linewidth',2);
+title('Minimum Stopband');
+xlabel('Frequency in pi units---->');
+ylabel('Magnitude---->');
+grid on;

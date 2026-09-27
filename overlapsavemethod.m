@@ -1,0 +1,25 @@
+n=0:9;
+x=[1 -1 2 -2 3 -3 4 -4];
+subplot(3,1,1);
+stem(x);
+grid on;
+title('x(n)');
+xlabel('No of Samples------->');
+ylabel('Amplitude------->');
+h=[-1 1];
+subplot(3,1,2);
+stem(h);
+grid on;
+title('h(n)');
+xlabel('No of Samples------->');
+ylabel('Amplitude------->');
+
+N=6;
+[Y]=overlapsave(x,h,N);
+disp(Y);
+subplot(3,1,3);
+stem(Y);
+grid on;
+title('Linear Convolution using Overlap Save Method');
+xlabel('No of Samples------->');
+ylabel('Amplitude------->');
