@@ -94,25 +94,6 @@ The programs in this repository demonstrate practical implementation of:
 
 ---
 
-# Repository Structure
-
-```text
-Digital-Signal-Processing/
-│
-├── Signal Generation/
-├── Signal Operations/
-├── Convolution/
-├── Correlation/
-├── DFT/
-├── FFT/
-├── Z-Transform/
-├── Digital Filters/
-│
-└── README.md
-```
-
----
-
 # Course Information
 
 **Course:** Digital Signal Processing
